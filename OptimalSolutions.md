@@ -1,8 +1,8 @@
 # Optimal Solutions
 
-## LeetCode #1:
+## LeetCode #1: Two Sum
 
-## LeetCode #2:
+## LeetCode #2: Add Two Numbers
 
 ## LeetCode #3: Longest substring without repeating characters
 
