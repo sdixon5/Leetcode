@@ -1,4 +1,4 @@
-# Optimal Solutions
+# Optimal Solutions - General Practice
 
 ## LeetCode #1: Two Sum
 
@@ -137,5 +137,104 @@ class Solution:
       res = max(res, r - l + 1)
     return res
 ```
+
+</details>
+
+# The LeetCode Beginner's Guide
+
+## LeetCode #1480: Running Sum of 1d Array
+
+<details>
+  <Summary>#1480</Summary>
+
+### Overview
+
+Given an array `nums`. We define a running sum of an array as `runningSum[i] = sum(nums[0]…nums[i])`.
+
+Return the running sum of `nums`.
+
+#### Example 1:
+
+```
+Input: nums = [1,2,3,4]
+Output: [1,3,6,10]
+Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
+```
+
+#### Example 2:
+
+```
+Input: nums = [1,1,1,1,1]
+Output: [1,2,3,4,5]
+Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1].
+```
+
+#### Example 3:
+
+```
+Input: nums = [3,1,2,10,1]
+Output: [3,4,6,16,17]
+```
+
+#### Constraints
+
+1 <= nums.length <= 1000
+
+-10^6 <= nums[i] <= 10^6
+
+### Explanation
+
+#### LeetCode Video Solution
+
+##### Java
+
+```
+class Solution {
+  public int[] runningSum(int[] nums) {
+    int[] results = new int[nums.length];
+    results[0] = nums[0];
+
+    for (int i = 1; i < nums.length; i++) {
+      results[i] = nums[i] + results[i-1];
+    }
+
+    return results;
+  }
+
+  //time complexity = O(n)
+  //space complexity = O(1)
+}
+```
+
+Time Complexity: O(n)
+
+Space Complexity: O(1) --> constant
+
+##### Alternative Solution
+
+This solution makes it so that we don't need to create a new array. We will overwrite the input array.
+
+Overwritten Input Complexity:
+
+Time Complexity: O(n)
+
+Space Complexity: O(1)
+
+```
+class Solution {
+  public int[] runningSum(int[] nums) {
+    for (int i = 1; i < nums.length; i++) {
+      nums[i] += nums[i-1];
+    }
+
+    return nums;
+  }
+
+  //time complexity = O(n)
+  //space complexity = O(1)
+}
+```
+
+Comments suggest the in-place version is poor practice because the method caller may not expect you to alter the values you are giving them. If the language passes this data by reference you may cause un-expected side effects by altering the values.
 
 </details>
