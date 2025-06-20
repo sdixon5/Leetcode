@@ -10,7 +10,21 @@ namespace RichestCustomerWealth
     {
         public int MaximumWealth(int[][] accounts)
         {
-            return 0;
+            int maxWealthSoFar = 0;
+
+            foreach (int[] customer in accounts)
+            {
+                int currentCustomerWealth = 0;
+
+                foreach (int bank in customer)
+                {
+                    currentCustomerWealth += bank;
+                }
+
+                maxWealthSoFar = Math.Max(maxWealthSoFar, currentCustomerWealth);
+            }
+
+            return maxWealthSoFar;
         }
     }
 }

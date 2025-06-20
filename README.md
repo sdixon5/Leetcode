@@ -292,8 +292,41 @@ n == accounts[i].length
 
 ### Explanation
 
+Can imagine as a matrix/grid.
+
+![grid](./1672/images/grid-matrix.png)
+
 #### LeetCode Video Solution
 
-##### Alternative Solution
+Time Complexity: O(n x m)
+
+Space Complexity: O(1)
+
+```
+class Solution {
+  public int maximumWealth(int[][] accounts) {
+    int maxWealthSoFar = 0;
+
+    for (int[] customer: accounts) {
+      int currentCustomerWealth = 0;
+
+      for (int bank: customer) {
+        currentCustomerWealth += bank;
+      }
+
+      maxWealthSoFar = Math.max(maxWealthSoFar, currentCustomerWealth);
+    }
+
+    return maxWealthSoFar;
+  }
+
+  //Time Complexity: O(n x m)
+  //Space Complexity: O(1)
+}
+```
+
+##### Analysis
+
+It's still just two for loops. I'm really surprised there isn't a more optimal solution. I would have expected there to be a way to avoid two for loops since it causes a O(n^2) or O(n \* m).
 
 </details>
