@@ -330,3 +330,74 @@ class Solution {
 It's still just two for loops. I'm really surprised there isn't a more optimal solution. I would have expected there to be a way to avoid two for loops since it causes a O(n^2) or O(n \* m).
 
 </details>
+
+## LeetCode #412: Fizz Buzz
+
+<details>
+<summary>#412</summary>
+
+### Overview
+
+Given an integer `n`, return a string array `answer` (_1-indexed_) where:
+
+`answer[i] == "FizzBuzz"` if `i` is divisible by `3` and `5`.
+`answer[i] == "Fizz"` if `i` is divisible by `3`.
+`answer[i] == "Buzz"` if `i` is divisible by `5`.
+`answer[i] == i` (as a string) if none of the above conditions are true.
+
+#### Example 1:
+
+Input: n = 3
+Output: ["1","2","Fizz"]
+
+#### Example 2:
+
+Input: n = 5
+Output: ["1","2","Fizz","4","Buzz"]
+
+#### Example 3:
+
+Input: n = 15
+Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
+
+#### Constraints:
+
+1 <= n <= 10^4
+
+### Explanation
+
+Time Complexity: O(n)
+
+Space Complexity: O(1) --> only 1 because the space we are using is not used in the calculation only for output.
+
+#### LeetCode Video Solution
+
+```
+class Solution {
+  public List<String> fizzBuzz(int n) {
+    List<String> answer = new ArrayList<>(n);
+
+    for (int i = 1; i <= n; i++) {
+      boolean divisibleBy3 = i % 3 == 0;
+      boolean divisibleBy5 = i % 5 == 0;
+
+      if (divisibleBy3 && divisibleBy5) {
+        answer.add("FizzBuzz");
+      } else if (divisibleBy3) {
+        answer.add("Fizz");
+      } else if (divisibleBy5) {
+        answer.add("Buzz");
+      } else {
+        answer.add(String.valueOf(i));
+      }
+    }
+
+    return answer;
+
+    //Time Complexity: O(n)
+    //Space Complexity: O(1)
+  }
+}
+```
+
+</details>
