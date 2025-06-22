@@ -341,23 +341,29 @@ It's still just two for loops. I'm really surprised there isn't a more optimal s
 Given an integer `n`, return a string array `answer` (_1-indexed_) where:
 
 `answer[i] == "FizzBuzz"` if `i` is divisible by `3` and `5`.
+
 `answer[i] == "Fizz"` if `i` is divisible by `3`.
+
 `answer[i] == "Buzz"` if `i` is divisible by `5`.
+
 `answer[i] == i` (as a string) if none of the above conditions are true.
 
 #### Example 1:
 
 Input: n = 3
+
 Output: ["1","2","Fizz"]
 
 #### Example 2:
 
 Input: n = 5
+
 Output: ["1","2","Fizz","4","Buzz"]
 
 #### Example 3:
 
 Input: n = 15
+
 Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
 
 #### Constraints:
@@ -437,6 +443,196 @@ class Solution {
     //Time Complexity: O(n)
     //Space Complexity: O(1)
   }
+}
+```
+
+</details>
+
+## LeetCode #1342: Number of Steps to Reduce a Number to Zero
+
+<details>
+<summary>#1342</summary>
+
+### Overview
+
+Given an integer `num`, return _the number of steps to reduce it to zero_.
+
+In one step, if the current number is even, you have to divide it by `2`, otherwise, you have to subtract `1` from it.
+
+#### Example 1:
+
+**Input:** num = 14
+
+**Output:** 6
+
+**Explanation:**
+
+Step 1) 14 is even; divide by 2 and obtain 7.
+
+Step 2) 7 is odd; subtract 1 and obtain 6.
+
+Step 3) 6 is even; divide by 2 and obtain 3.
+
+Step 4) 3 is odd; subtract 1 and obtain 2.
+
+Step 5) 2 is even; divide by 2 and obtain 1.
+
+Step 6) 1 is odd; subtract 1 and obtain 0.
+
+#### Example 2:
+
+**Input:** num = 8
+
+**Output:** 4
+
+**Explanation:**
+
+Step 1) 8 is even; divide by 2 and obtain 4.
+
+Step 2) 4 is even; divide by 2 and obtain 2.
+
+Step 3) 2 is even; divide by 2 and obtain 1.
+
+Step 4) 1 is odd; subtract 1 and obtain 0.
+
+#### Example 3:
+
+**Input:** num = 123
+
+**Output:** 12
+
+#### Constraints:
+
+0 <= num <= 10^6
+
+### Explanation
+
+6 / 2 = 3 --> halfing step
+
+3 - 1 = 2 --> subtracting step
+
+2 / 2 = 1
+
+1 - 1 = 0
+
+input: 6; output: 4
+
+Time Complexity: O(logn)
+
+**30** _15_ **14** _7_ **6** _3_ **2** _1_ 0
+
+**halfing steps** _subtracting steps_
+
+logn + logn
+
+![timeComplexity](./1342/images/timeComplexity.png)
+
+Space Complexity: O(1)
+
+We do not create a data structure proportional in size to the size of our input
+
+#### LeetCode Video Soltuion
+
+```
+class Solution {
+  public int numberOfSteps(int num) {
+    int steps = 0;
+
+    while (num > 0) {
+      if (num % 2 == 0) {
+        num /= 2;
+      } else
+      {
+        num--;
+      }
+
+      steps++;
+    }
+
+    return steps;
+  }
+
+  //Time Complexity = O(logn)
+  //Space Complexity = O(1)
+}
+```
+
+#### Bitwise Approach
+
+This does not improve time or space complexity.
+
+Alt way of thinking, may help with other problems.
+
+- Binary representation of integers
+
+- Bitwise Shift Operators
+
+- Bitwise Logical Operators
+
+- Bitmasks
+
+Advanced Concepts
+![advancedConcepts](./1342/images/advancedConcepts.png)
+
+Binary Rep Of Ints
+![binaryRepOfInts](./1342/images/binaryRepOfInts.png)
+
+Convert To Decimal
+![convertToDecimal](./1342/images/convertToDecimal.png)
+
+Half in Binary Shift Right
+![halfInBinaryShiftRight](./1342/images/halfInBinaryShiftRight.png)
+
+Odd in binary rightmost has value of 1
+![oddInBinaryRightmostHas1](./1342/images//oddInBinaryRightmostIs1.png)
+
+Bitwise operators
+![bitwiseOperators](./1342/images/bitwiseOperators.png)
+
+What bitwise ops do
+![bitwiseOpsDo](./1342/images/whatBitwiseOpDoes.png)
+Time Complexity O(logn)
+
+Mirror Bool Ops
+![mirror](./1342/images/mirrorBoolOps.png)
+
+Differences
+![diffs](./1342/images/diffs.png)
+![diffs2](./1342/images/diffs2.png)
+
+Bitmask
+![bitmask](./1342/images/bitmask.png)
+
+Our bitmask to check even/odd
+![ourbitmask](./1342/images/ourbitmask.png)
+
+if value in num is 0, we get 0 and if num is 1 we get num. So depends on value in rightmost position due to our bitmask being 00000001. The bitmask 0 positions are not checked, only where the bitmask has a 1 is the corresponding value checked in our num value.
+
+Space Complexity O(1)
+
+```
+class Soltuion {
+  public int numberOfSteps(int num) {
+    int steps = 0;
+
+    while (num > 0) {
+      //Before we used num % 2
+      if ((num & 1) == 0) { //num: xxxxxx0 & bitmask: 0000001
+        //Before we used num /= 2
+        num >>= 1; //num = num >> 1;
+      } else
+      {
+        num--;
+      }
+
+      steps++;
+    }
+
+    return steps;
+  }
+
+  //Time Complexity = O(logn)
+  //Space Complexity = O(1)
 }
 ```
 
