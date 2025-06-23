@@ -637,3 +637,87 @@ class Soltuion {
 ```
 
 </details>
+
+## LeetCode #876: Middle of the Linked List
+
+<details>
+<summary>#876</summary>
+
+### Overview
+
+![overview](./876/images/overview.png)
+
+### Explanation
+
+Conceptual Overview
+
+Node / LinkedList
+
+![node-linkedlist](./876/images/node-linkedlist.png)
+
+Middle Node
+
+![middleNode](./876/images/middleNode.png)
+
+#### LeetCode Video Solution
+
+##### Approach One
+
+Spit values out into an array while keeping track of the LinkedLists total count.
+
+Time Complexity: O(n)
+
+Space Complexity: O(n)
+
+```
+class Solution {
+  public ListNode middleNode(ListNode head) {
+    ArrayList<ListNode> array = new ArrayList<>();
+
+    int length = 0;
+    while (head != null) {
+      array.add(head);
+      head = head.next;
+      length++;
+    }
+
+    return array.get(length / 2);
+  }
+
+  //time complexity O(n)
+  //space complexity O(n)
+}
+```
+
+#### Approach Two
+
+In an interview you would be expected to interact with the linked list. Using an array defeats the purpose of the linked list.
+
+How do we do this? --> Use pointers.
+
+![middleNodePointerMovement](./876/images/middleNodePointerMovement.png)
+
+Time Complexity: O(n)
+
+Space Complexity: O(1)
+
+```
+class Solution {
+  public ListNode middleNode(ListNode head) {
+    ListNode middle = head;
+    ListNode end = head;;
+
+    while (end != null && end.next != null) { // 3 1 2 7 7
+      middle = middle.next;
+      end = end.next.next;
+    }
+
+    return middle;
+  }
+
+  //time complexity O(n)
+  //space complexity O(1)
+}
+```
+
+</details>
