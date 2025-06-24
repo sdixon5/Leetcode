@@ -1,4 +1,4 @@
-# Optimal Solutions - General Practice
+# General Practice
 
 ## LeetCode #1: Two Sum
 
@@ -137,6 +137,72 @@ class Solution:
       res = max(res, r - l + 1)
     return res
 ```
+
+</details>
+
+# Daily Challenges
+
+## LeetCode 2200: Find All K-Distant Indices in an Array
+
+<details>
+<summary>#2200</summary>
+
+### Overview
+
+![overview](./DailyChallenge/2200/images/overview.png)
+
+### Editorial Solutions
+
+#### Approach One: Enumeration
+
+![approachOneEnumeration](./DailyChallenge/2200/images/approachOneExplanation.png)
+
+```
+public class Solution {
+    public IList<int> FindKDistantIndices(int[] nums, int key, int k) {
+        List<int> res = new List<int>();
+        int n = nums.Length;
+        // traverse number pairs
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (nums[j] == key && Math.Abs(i - j) <= k) {
+                    res.Add(i);
+                    break;  // early termination to prevent duplicate addition
+                }
+            }
+        }
+        return res;
+    }
+}
+```
+
+![approachonecomplexity](./DailyChallenge/2200/images/approachOneComplexity.png)
+
+#### Approach Two: One-Time Traversal
+
+![approachTwoExplanation](./DailyChallenge/2200/images/approachTwoExplanation.png)
+
+```
+public class Solution {
+    public IList<int> FindKDistantIndices(int[] nums, int key, int k) {
+        List<int> res = new List<int>();
+        int r = 0;  // unjudged minimum index
+        int n = nums.Length;
+        for (int j = 0; j < n; ++j) {
+            if (nums[j] == key) {
+                int l = Math.Max(r, j - k);
+                r = Math.Min(n - 1, j + k) + 1;
+                for (int i = l; i < r; ++i) {
+                    res.Add(i);
+                }
+            }
+        }
+        return res;
+    }
+}
+```
+
+![approachTwoComplexity](./DailyChallenge/2200/images/approachTwoComplexity.png)
 
 </details>
 
@@ -294,7 +360,7 @@ n == accounts[i].length
 
 Can imagine as a matrix/grid.
 
-![grid](./1672/images/grid-matrix.png)
+![grid](./LeetCodeBeginnersGuide/1672/images/grid-matrix.png)
 
 #### LeetCode Video Solution
 
@@ -525,7 +591,7 @@ Time Complexity: O(logn)
 
 logn + logn
 
-![timeComplexity](./1342/images/timeComplexity.png)
+![timeComplexity](./LeetCodeBeginnersGuide/1342/images/timeComplexity.png)
 
 Space Complexity: O(1)
 
@@ -572,39 +638,39 @@ Alt way of thinking, may help with other problems.
 - Bitmasks
 
 Advanced Concepts
-![advancedConcepts](./1342/images/advancedConcepts.png)
+![advancedConcepts](./LeetCodeBeginnersGuide/1342/images/advancedConcepts.png)
 
 Binary Rep Of Ints
-![binaryRepOfInts](./1342/images/binaryRepOfInts.png)
+![binaryRepOfInts](./LeetCodeBeginnersGuide/1342/images/binaryRepOfInts.png)
 
 Convert To Decimal
-![convertToDecimal](./1342/images/convertToDecimal.png)
+![convertToDecimal](./LeetCodeBeginnersGuide/1342/images/convertToDecimal.png)
 
 Half in Binary Shift Right
-![halfInBinaryShiftRight](./1342/images/halfInBinaryShiftRight.png)
+![halfInBinaryShiftRight](./LeetCodeBeginnersGuide/1342/images/halfInBinaryShiftRight.png)
 
 Odd in binary rightmost has value of 1
-![oddInBinaryRightmostHas1](./1342/images//oddInBinaryRightmostIs1.png)
+![oddInBinaryRightmostHas1](./LeetCodeBeginnersGuide/1342/images//oddInBinaryRightmostIs1.png)
 
 Bitwise operators
-![bitwiseOperators](./1342/images/bitwiseOperators.png)
+![bitwiseOperators](./LeetCodeBeginnersGuide/1342/images/bitwiseOperators.png)
 
 What bitwise ops do
-![bitwiseOpsDo](./1342/images/whatBitwiseOpDoes.png)
+![bitwiseOpsDo](./LeetCodeBeginnersGuide/1342/images/whatBitwiseOpDoes.png)
 Time Complexity O(logn)
 
 Mirror Bool Ops
-![mirror](./1342/images/mirrorBoolOps.png)
+![mirror](./LeetCodeBeginnersGuide/1342/images/mirrorBoolOps.png)
 
 Differences
-![diffs](./1342/images/diffs.png)
-![diffs2](./1342/images/diffs2.png)
+![diffs](./LeetCodeBeginnersGuide/1342/images/diffs.png)
+![diffs2](./LeetCodeBeginnersGuide/1342/images/diffs2.png)
 
 Bitmask
-![bitmask](./1342/images/bitmask.png)
+![bitmask](./LeetCodeBeginnersGuide/1342/images/bitmask.png)
 
 Our bitmask to check even/odd
-![ourbitmask](./1342/images/ourbitmask.png)
+![ourbitmask](./LeetCodeBeginnersGuide/1342/images/ourbitmask.png)
 
 if value in num is 0, we get 0 and if num is 1 we get num. So depends on value in rightmost position due to our bitmask being 00000001. The bitmask 0 positions are not checked, only where the bitmask has a 1 is the corresponding value checked in our num value.
 
@@ -645,7 +711,7 @@ class Soltuion {
 
 ### Overview
 
-![overview](./876/images/overview.png)
+![overview](./LeetCodeBeginnersGuide/876/images/overview.png)
 
 ### Explanation
 
@@ -653,11 +719,11 @@ Conceptual Overview
 
 Node / LinkedList
 
-![node-linkedlist](./876/images/node-linkedlist.png)
+![node-linkedlist](./LeetCodeBeginnersGuide/876/images/node-linkedlist.png)
 
 Middle Node
 
-![middleNode](./876/images/middleNode.png)
+![middleNode](./LeetCodeBeginnersGuide/876/images/middleNode.png)
 
 #### LeetCode Video Solution
 
@@ -695,7 +761,7 @@ In an interview you would be expected to interact with the linked list. Using an
 
 How do we do this? --> Use pointers.
 
-![middleNodePointerMovement](./876/images/middleNodePointerMovement.png)
+![middleNodePointerMovement](./LeetCodeBeginnersGuide/876/images/middleNodePointerMovement.png)
 
 Time Complexity: O(n)
 
@@ -719,5 +785,108 @@ class Solution {
   //space complexity O(1)
 }
 ```
+
+</details>
+
+## LeetCode #383: Ransome Note
+
+<details>
+<summary>#383</summary>
+
+### Overview
+
+![overview](./LeetCodeBeginnersGuide/383/images/overview.png)
+
+### Explanation
+
+During the explanation it stated that removing letters from magazine requires saving the new string in a temp string and then reinitalizing magazine because strings are immutable.
+
+#### LeetCode Video Solution
+
+##### Approach One
+
+In the first approach the solution is suggesting going through each letter in ransom note, checking for existance in magazine and then removing existing letter from magazine and moving to next letter in ransome note and repeating.
+
+Time Complexity: O(n\*m)
+
+Space Complexity: O(m)
+
+```
+class Solution {
+  public boolean canConstruct(String ransomNote, String magazine) {
+    for (int i = 0; i < ransomNote.length(); i++) {
+      char r = ransomeNote.charAt(i);
+
+      int matchingIndex = magazine.indexOf(r);
+
+      if (matchingIndex == -1) {
+        return false;
+      }
+
+      magazine = magazine.substring(0, matchingIndex) + magazine.substring(matchingIndex + 1);
+    }
+
+    return true;
+  }
+
+  //time complexity: O(n*m)
+  //space complexity: O(m)
+}
+```
+
+##### HashMap approach
+
+Time Complexity: O(m)
+
+magainze.length >= ransomNote.length --> if not true then not enough letters to write ransom note, just jump out.
+
+the complexity depends on the **longer** of the two strings, magazine
+
+Space Complexity: O(k)
+
+k means distinct letters in magazine
+
+k --> 26
+
+since k is upper bound can say
+
+Space Complexity: O(1)
+
+```
+class Solution {
+  public boolean canConstruct(String ransomNote, String magazine) {
+    HashMap<Character, Integer> magazineLetters = new HashMap<>(); //k = 26
+
+    for (int i = 0; i < magazine.length(); i++) {
+      char c = magazine.charAt(i);
+
+      int currentCount = magainzeLetter.getOrDefault(m, 0);
+      magazineLetters.put(m, currentCount + 1);
+    }
+
+    //bounded by m
+    for (int i = 0; i < ransomNote.length(); i++) {
+      char r = ransomNote.charAt(i);
+
+      int currentCount = magazineLetters.getOrDefault(r, 0);
+
+      if (currentCount == 0) {
+        return false;
+      }
+
+      magazineLetter.put(r, currentCount - 1);
+    }
+
+    return true;
+  }
+
+  //time complexity: O(m)
+  //space complexity: O(k)
+}
+```
+
+HashMap Space Complexity Correction
+
+![spaceComplexityCorrection](./LeetCodeBeginnersGuide/383/images/spaceComplexityCorrection.png)
 
 </details>

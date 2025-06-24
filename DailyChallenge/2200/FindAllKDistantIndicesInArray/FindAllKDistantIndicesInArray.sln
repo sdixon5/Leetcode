@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KDistantIndicies", "KDistantIndicies\KDistantIndicies.csproj", "{D10D9769-32DA-4A8C-9170-A3FADF7BDE69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{3E696A5B-CF10-4685-B197-122E67A2E5D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D10D9769-32DA-4A8C-9170-A3FADF7BDE69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10D9769-32DA-4A8C-9170-A3FADF7BDE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10D9769-32DA-4A8C-9170-A3FADF7BDE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10D9769-32DA-4A8C-9170-A3FADF7BDE69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E696A5B-CF10-4685-B197-122E67A2E5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E696A5B-CF10-4685-B197-122E67A2E5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E696A5B-CF10-4685-B197-122E67A2E5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E696A5B-CF10-4685-B197-122E67A2E5D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EF0ACCB-1481-41E9-A61B-68AFDFDE677D}
+	EndGlobalSection
+EndGlobal
