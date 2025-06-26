@@ -1,3 +1,7 @@
+# LeetCode Pathing
+
+![pathing](./images/LeetCodePathing.png)
+
 # General Practice
 
 ## LeetCode #1: Two Sum
