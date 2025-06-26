@@ -894,3 +894,39 @@ HashMap Space Complexity Correction
 ![spaceComplexityCorrection](./LeetCodeBeginnersGuide/383/images/spaceComplexityCorrection.png)
 
 </details>
+
+# Introduction to Data Structure: Arrays 101
+
+## LeetCode #485: Max Consecutive Ones
+
+<details>
+<summary>#485</summary>
+
+## Overview
+
+![overview](./Arrays101/485/images/Overview.png)
+
+## Optimal Solution
+
+```
+class Solution {
+  public int findMaxConsecutiveOnes(int[] nums) {
+    int count = 0;
+    int maxCount = 0;
+    for(int i = 0; i < nums.length; i++) {
+      if(nums[i] == 1) {
+        // Increment the count of 1's by one.
+        count += 1;
+      } else {
+        // Find the maximum till now.
+        maxCount = Math.max(maxCount, count);
+        // Reset count of 1.
+        count = 0;
+      }
+    }
+    return Math.max(maxCount, count);
+  }
+}
+```
+
+</details>
