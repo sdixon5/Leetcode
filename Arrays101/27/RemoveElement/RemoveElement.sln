@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveElement", "RemoveElement\RemoveElement.csproj", "{44BB3487-8208-4A8D-B225-713A0398D90C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{8A10E755-249E-42BF-99B6-1866425C62EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44BB3487-8208-4A8D-B225-713A0398D90C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44BB3487-8208-4A8D-B225-713A0398D90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44BB3487-8208-4A8D-B225-713A0398D90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44BB3487-8208-4A8D-B225-713A0398D90C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A10E755-249E-42BF-99B6-1866425C62EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A10E755-249E-42BF-99B6-1866425C62EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A10E755-249E-42BF-99B6-1866425C62EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A10E755-249E-42BF-99B6-1866425C62EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A31BC73-B4C6-410D-A57E-6677373DEA62}
+	EndGlobalSection
+EndGlobal
