@@ -2016,6 +2016,36 @@ public class Solution {
 
 </details>
 
+### LeetCode #26: Remove Duplicates from Sorted Array
+
+<details>
+<summary>#26</summary>
+
+#### Overview
+
+#### LeetCode Solutions
+
+##### Approach One: Two Indexes Approach
+
+```
+public class Solution {
+    public int RemoveDuplicates(int[] nums) {
+        int insertIndex = 1;
+        for (int i = 1; i < nums.Length; i++) {
+            // We skip to next index if we see a duplicate element
+            if (nums[i - 1] != nums[i]) {
+                /* Storing the unique element at insertIndex index and
+                   incrementing the insertIndex by 1 */
+                nums[insertIndex] = nums[i];
+                insertIndex++;
+            }
+        }
+
+        return insertIndex;
+    }
+}
+```
+
 Boilerplate below:
 
 ### LeetCode #:
