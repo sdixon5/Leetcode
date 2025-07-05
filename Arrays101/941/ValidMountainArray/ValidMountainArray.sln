@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidMountainArray", "ValidMountainArray\ValidMountainArray.csproj", "{D9082C59-15FC-412B-ACB1-29813A94CE6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{8E361ABA-DB4B-49FA-8FD3-AFB1F4175D7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9082C59-15FC-412B-ACB1-29813A94CE6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9082C59-15FC-412B-ACB1-29813A94CE6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9082C59-15FC-412B-ACB1-29813A94CE6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9082C59-15FC-412B-ACB1-29813A94CE6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E361ABA-DB4B-49FA-8FD3-AFB1F4175D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E361ABA-DB4B-49FA-8FD3-AFB1F4175D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E361ABA-DB4B-49FA-8FD3-AFB1F4175D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E361ABA-DB4B-49FA-8FD3-AFB1F4175D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FC048B9-7790-42B8-A5F3-E296C024FE2E}
+	EndGlobalSection
+EndGlobal
