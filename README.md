@@ -2464,10 +2464,24 @@ We now have a couple of straightforward in-place problems for you to try. Rememb
 
 #### LeetCode Solutions
 
+No official solution provided. Other user solution listed below.
+
 ##### Approach One:
 
 ```
+        public int[] ReplaceElements(int[] arr)
+        {
+            int max = -1;
 
+            for (int i = arr.Length - 1; i >= 0; i--)
+            {
+                int newMax = Math.Max(max, arr[i]);
+                arr[i] = max;
+                max = newMax;
+            }
+
+            return arr;
+        }
 ```
 
 Boilerplate below:
